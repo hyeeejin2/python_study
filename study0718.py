@@ -1,5 +1,6 @@
 # 내장 함수
 
+
 # abs(x)는 임의의 숫자를 입력받았을 때 절댓값을 반환
 print(abs(3), abs(-3))
 print(abs(-5.5), abs(5.5))
@@ -40,20 +41,16 @@ for i, value in enumerate(li):
 # eval은 실행 가능한 문자열을 입력 받아 실행값을 돌려줌
 print(eval('1+2'), eval('4/2'), eval("'hello '+'world'"), eval('chr(97)'), eval('divmod(5,2)'))
 
-
 # filter는 반환 값이 참인 것만 묶어서 필터링함
 def positive(x):
     return x > 0
 
-
 print(list(filter(positive, ([1, -3, 2, 0, -5, 6]))))
 print(list(filter(lambda x: x > 0, [1, -3, 2, 0, -5, 6])))
-
 
 # map(f, iterable)은 함수와 반복 가능한 자료형을 입력 받아 함수가 수행한 결과를 반환
 def two_times(x):
     return x * 2
-
 
 print(list(map(two_times, [1, 2, 3, 4])))
 print(list(map(lambda x: x * 2, [1, 2, 3, 4])))
@@ -74,7 +71,6 @@ f = 1
 g = f
 print(id(f), id(1), id(g))
 
-
 # input() 사용자 입력 함수, 입력 받은 것은 문자열로 인식
 # string=input("문자열을 입력 : ")
 # number=int(input("정수를 입력 : "))
@@ -84,7 +80,6 @@ print(id(f), id(1), id(g))
 # 참이면 True, 거짓이면 False
 class A:
     pass
-
 
 a2 = A()
 a3 = 3
