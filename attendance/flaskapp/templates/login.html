@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login_style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+   $(function () {
+            $('#phone').keydown(function (event) {
+             var key = event.charCode || event.keyCode || 0;
+             $text = $(this);
+             if (key !== 8 && key !== 9) {
+                 if ($text.val().length === 3) {
+                     $text.val($text.val() + '-');
+                 }
+                 if ($text.val().length === 8) {
+                     $text.val($text.val() + '-');
+                 }
+             }
+             return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+         })
+   });
+});
+    </script>
+  </head>
+  <body>
+    <form class="login" action="http://localhost:5000/login_success" method="post">
+      <h1>Tutee Login</h1>
+      <div class="inputbox" >
+        <input type="text" maxlength="255"name="email" placeholder="Phone Number">
+        <input type="password" name="pw" placeholder="Password">
+        <input type="submit" name="submit" value="Login">
+      </div>
+    </form>
+  </body>
+</html>
