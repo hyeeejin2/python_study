@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Sign up</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/signup_style.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  </head>
+  <body>
+    <form class="sginup" action="http://192.168.109.160:5000/signup_test" method="post">
+      <div class="signbox">
+        <div class="name">
+          <input type="text" name="name" placeholder="name">
+        </div>
+        <div class="pw">
+          <input type="password" name="pw" placeholder="Password">
+        </div>
+        <div class="email">
+          <input type="email" name="email" placeholder="email">
+        </div>
+        <div class="mac_address">
+          <input type="text" name="mac_address" placeholder="mac_address">
+        </div>
+        <input type="submit" name="check" value="Sign up">
+	<br>
+	{% if error %}
+		{{error}}!
+	{% endif %}
+      </div>
+    </form>
+  </body>
+</html>
